@@ -47,10 +47,10 @@ fun HomeScreen(onNavigate: (String) -> Unit) {
         ) {
             CompositionLocalProvider(LocalRippleConfiguration provides RippleConfiguration(color = Color.Red)) {
                 Button(
-                    onClick = { onNavigate(Routes.SAMPLE) },
+                    onClick = { onNavigate(Routes.BASICS) },
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    Text("Sample Screen")
+                    Text("Basics Screen")
                 }
             }
         }

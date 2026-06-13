@@ -12,7 +12,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.asad.composeuipractice.screens.HomeScreen
-import com.asad.composeuipractice.screens.SampleScreen
+import com.asad.composeuipractice.screens.BasicsScreen
 import com.asad.composeuipractice.ui.theme.ComposeUiPracticeTheme
 
 class MainActivity : ComponentActivity() {
@@ -35,14 +35,14 @@ class MainActivity : ComponentActivity() {
                         HomeScreen(onNavigate = { route -> navController.navigate(route) })
                     }
                     composable(
-                        Routes.SAMPLE,
+                        Routes.BASICS,
                         // 화면 전환 시 좌우 슬라이드
                         enterTransition = { slideIntoContainer(SlideDirection.Left, tween(300)) },
                         exitTransition = { slideOutOfContainer(SlideDirection.Left, tween(300)) },
                         popEnterTransition = { slideIntoContainer(SlideDirection.Right, tween(300)) },
                         popExitTransition = { slideOutOfContainer(SlideDirection.Right, tween(300)) }
                     ) {
-                        SampleScreen()
+                        BasicsScreen()
                     }
                 }
             }
