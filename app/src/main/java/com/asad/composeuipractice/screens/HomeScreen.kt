@@ -52,6 +52,12 @@ fun HomeScreen(onNavigate: (String) -> Unit) {
                 ) {
                     Text("Basics Screen")
                 }
+                Button(
+                    onClick = { onNavigate(Routes.NAVER) },
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text("Naver Screen")
+                }
             }
         }
     }

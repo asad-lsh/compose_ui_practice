@@ -7,12 +7,15 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.animation.AnimatedContentTransitionScope.SlideDirection
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.animation.core.tween
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.asad.composeuipractice.screens.HomeScreen
 import com.asad.composeuipractice.screens.BasicsScreen
+import com.asad.composeuipractice.screens.NaverScreen
 import com.asad.composeuipractice.ui.theme.ComposeUiPracticeTheme
 
 class MainActivity : ComponentActivity() {
@@ -43,6 +46,16 @@ class MainActivity : ComponentActivity() {
                         popExitTransition = { slideOutOfContainer(SlideDirection.Right, tween(300)) }
                     ) {
                         BasicsScreen()
+                    }
+                    composable(
+                        Routes.NAVER,
+                        // 화면 전환 시 페이드
+                        enterTransition = { fadeIn(tween(300)) },
+                        exitTransition = { fadeOut(tween(300)) },
+                        popEnterTransition = { fadeIn(tween(300)) },
+                        popExitTransition = { fadeOut(tween(300)) }
+                    ) {
+                        NaverScreen()
                     }
                 }
             }
